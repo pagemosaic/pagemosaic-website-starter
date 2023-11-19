@@ -1,0 +1,19 @@
+{
+  "name": "infra",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "run-command node ./scripts/deploy.js",
+    "destroy": "run-command node ./scripts/destroy.js"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-ssm": "3.451.0",
+    "@types/node": "20.8.10",
+    "run-command": "workspace:*",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.105",
+    "constructs": "^10.3.0"
+  }
+}

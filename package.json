@@ -1,0 +1,21 @@
+{
+  "name": "pagemosaic-website-starter",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "workspaces": [
+    "platform/*"
+  ],
+  "scripts": {
+    "deploy-platform": "turbo run deploy",
+    "destroy-platform": "turbo run destroy"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "turbo": "^1.10.16"
+  }
+}
