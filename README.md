@@ -1,2 +1,1 @@
-# pagemosaic-website-starter
-Page Mosaic Web Platform | Website Starter
+# Page Mosaic Web Platform | Website Starter
