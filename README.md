@@ -1,8 +1,8 @@
 # Page Mosaic Web Platform | Website Starter
 
-This is the stage 1 of the development process of Page Mosaic Web Platform.
+This is stage 1 of the development process for the Page Mosaic Web Platform.
 
-Using this code you can deploy a static web page into AWS with only single command.
+Using this code, you can deploy a static web page to AWS with just a single command.
 
 ### Prerequisites:
 * Create AWS user in IAM Identity Center with administrative permission
