@@ -2,6 +2,7 @@
   "name": "infra",
   "version": "1.0.0",
   "scripts": {
+    "bootstrap": "run-command node ./scripts/bootstrap.js",
     "deploy": "run-command node ./scripts/deploy.js",
     "destroy": "run-command node ./scripts/destroy.js"
   },

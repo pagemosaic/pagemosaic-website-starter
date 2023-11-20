@@ -9,6 +9,7 @@
     "platform/*"
   ],
   "scripts": {
+    "bootstrap-platform": "turbo run bootstrap",
     "deploy-platform": "turbo run deploy",
     "destroy-platform": "turbo run destroy"
   },
