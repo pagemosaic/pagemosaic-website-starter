@@ -90,6 +90,9 @@ After setting up your custom domain name and obtaining a validated SSL certifica
 * Transfer all your static website files into the `/platform/web-app` directory.
 * **Important**: Make sure to include an `index.html` file within the `/platform/web-app` directory. This file acts as the starting point of your website.
 * Run the deployment command again to update your website. The deployment process is optimized to intelligently update only the static files in the S3 bucket, avoiding unnecessary operations.
+```shell
+pnpm deploy-platform
+```
 
 ## Clean up
 
