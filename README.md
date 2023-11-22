@@ -83,14 +83,17 @@ pnpm install
 pnpm bootstrap-platform
 ```
 
-## SSL certificate issue
-If you want to bind a custom domain name to your website. You have to request a new SSL certificate for this domain.
+## Custom domain name and SSL certificate creation
+* If you want to bind a custom domain name to your website. You have to request a new SSL certificate for this domain.
 First, you have to buy a domain name. Then go to AWS console in the browser and request new SSL certirficate how it is shown in the video below.
-<p>
-   <a href="" target="_blank">
-<img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/SSL_certificate_issueing.png" alt="SSL certificate issuing" width="33%"/>
-   </a>
-</p>
+   <p>
+      <a href="https://youtu.be/kiEkHLNfAGo" target="_blank">
+   <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/SSL_certificate_issueing.png" alt="SSL certificate issuing" width="33%"/>
+      </a>
+   </p>
+* Configure environment:
+  * `CERTIFICATE_ARN` - ARN of the AWS certificate resource value copied as it is shown in the video
+  * `DOMAIN_NAMES` - a domain name, and subdomains divided by comma
 
 ## Deployment
 
