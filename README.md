@@ -14,7 +14,7 @@ Upon successful deployment of the website resources to your AWS account, you wil
 **Additionally,** this README includes a step-by-step video tutorial guiding you through the process of setting up a custom domain name for your website.
 
 ## Set Up Your AWS Environment
-* Create an administrative user on AWS and configure AWS CLI locally:
+* Create an administrative user on AWS and configure AWS CLI locally, as demonstrated in the video tutorial linked below:
    <p>
       <a href="https://youtu.be/mXf6EvOvvKY" target="_blank">
    <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/create_admin_on_aws.png" alt="SSL certificate issuing" width="45%"/>
