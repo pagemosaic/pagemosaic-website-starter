@@ -1,10 +1,13 @@
-## Website Starter on AWS
+# Website Starter on AWS
 
-Using this code you can deploy a static web page into AWS with only single command.
+> This boilerplate is a component of the Page Mosaic Web Platform.
 
-### Add admin user to AWS environment
+This starter is ideal for hosting static websites on AWS. 
+Simply place your website files in the `/platform/web-app` directory and execute `pnpm deploy-platform`.
 
-Set up a user with administrative rights and programmatic access to AWS resources using AWS IAM Identity Center (formerly AWS Single Sign-On):
+## Set up localhost environment
+
+#### #1 AWS User Setup and AWS CLI Installation:
 
   1. Enable IAM Identity Center on AWS Account:
      * AWS recommends using IAM Identity Center for user management. Start by enabling it on your AWS account.
@@ -24,24 +27,34 @@ Set up a user with administrative rights and programmatic access to AWS resource
       > Use the profile option to manage different user configurations on your computer.
   1. Complete the Authorization Process:
      * Specify the session name for the session token.
+       <p>
+         <img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_6.png" alt="Image 6" width="33%" style="border-radius: 10px; box-shadow: 5px 5px 10px grey;"/>
+       </p>
   1. Authorize in the browser when prompted by the terminal and complete any required forms.
-     |     |     |     |
-     | --- | --- | --- |
-     | ![Image 1](IMAGE_URL_1) | ![Image 2](IMAGE_URL_2) | ![Image 3](IMAGE_URL_3) |
+        <p>
+        <table>
+          <tr>
+            <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_1.png" alt="Image 1" style="max-width:100%;"></td>
+            <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_2.png" alt="Image 2" style="max-width:100%;"></td>
+            <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_3.png" alt="Image 3" style="max-width:100%;"></td>
+          </tr>
+          <tr>
+            <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_4.png" alt="Image 1" style="max-width:100%;"></td>
+            <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_5.png" alt="Image 2" style="max-width:100%;"></td>
+            <td width="33%"></td>
+          </tr>
+        </table>
+        </p>
 
-
-### Preparations before use:
-
-* Install AWS CLI using this instructions: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-* Install CDK Toolkit:
+#### #2 Install CDK Toolkit on localhost
 ```shell
 npm install -g aws-cdk
 ```
 
-### Usage:
+## Pre-deployment preparations
 * You need to clone the repository to your local machine. Use the command:
 ```shell
-git clone -b stage-1 https://github.com/pagemosaic/pagemosaic-website-starter.git
+git clone https://github.com/pagemosaic/pagemosaic-website-starter.git
 ```
 
 * After cloning, navigate to the repository's folder using:
@@ -59,15 +72,13 @@ pnpm install
   * `AWS_PROFILE_NAME` - your SSO user name
   * `STACK_NAME` - AWS Stack name you prefer
 
-* Configure user SSO session:
-```shell
-aws configure sso --profile [user name]
-```
-
 * Run the CDK bootstrap:
 ```shell
 pnpm bootstrap-platform
 ```
+> Run this command only once if you haven't deployed the starter before on the AWS account 
+
+## Deployment
 
 * Run the CDK deployment:
 ```shell
@@ -75,13 +86,19 @@ pnpm deploy-platform
 ```
 
 * Find in the terminal output line with `WebsiteDomainName` - a CloudFront distribution name. Copy and paste it into the browser address field.
-* Enjoy.
 
 
-### Clean up
+## Clean up
 
 * Run the CDK destroy:
 ```shell
 pnpm destroy-platform
 ```
+
+## Troubleshooting
+
+If you have any questions, do not hesitate to discuss them here: [Discuss Website Starter](https://github.com/orgs/pagemosaic/discussions/categories/website-starter)
+
+Follow me on Twitter for new dev jorney stages where I keep journal about Page Mosaic Web Platform development: [Alex Pust](https://twitter.com/alex_pustovalov)
+
 
