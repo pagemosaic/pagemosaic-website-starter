@@ -2,60 +2,30 @@
 
 > This boilerplate is a component of the Page Mosaic Web Platform.
 
-This starter is ideal for hosting static websites on AWS.
-Simply place your website files in the `/platform/web-app` directory and execute `pnpm deploy-platform`.
+This starter kit offers an optimal solution for hosting static websites on Amazon Web Services (AWS). 
+To deploy your website, simply transfer your website files to the `/platform/web-app` directory. 
+Following this, execute the command `pnpm deploy-platform` to initiate the deployment process.
 
-## How the website will work on AWS
-After the deployment of the website resources to your account on AWS, you will have a CDN distribution of your static website.
-Also, there will be a S3 bucket where your files will be located. The CDN distribution will have random AWS URL. 
+## What You Will Receive
+Upon successful deployment of the website resources to your AWS account, you will obtain:
+* A CDN distribution for your static website, accessible through a uniquely generated AWS URL.
+* An S3 bucket, serving as the storage location for your website's files.
+Additionally, this README includes a step-by-step video tutorial guiding you through the process of setting up a custom domain name for your website. This includes obtaining a free SSL certificate for enhanced security and trust.
 
-## Set Up Localhost Environment
+## Setting Up Your AWS Environment
+* 
+* Create an Administrative User on AWS and Configure AWS CLI Locally:
+   <p>
+      <a href="https://youtu.be/mXf6EvOvvKY" target="_blank">
+   <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/create_admin_on_aws.png" alt="SSL certificate issuing" width="45%"/>
+      </a>
+   </p>
 
-#### #1 AWS User Setup and AWS CLI Installation:
-
-1. Enable IAM Identity Center on AWS Account:
-    * AWS recommends using IAM Identity Center for user management. Start by enabling it on your AWS account.
-1. Create a User in IAM Identity Center:
-    * Follow the AWS guide to create a user: [Create a User in IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/get-started-use-identity-center-directory-create-user-in-identity-center.html).
-1. Add Administrative Rights:
-    * Create an administrative permission set as detailed here: [Create an Administrative Permission Set](https://docs.aws.amazon.com/singlesignon/latest/userguide/get-started-create-an-administrative-permission-set.html).
-1. Link Administrative Rights to the User:
-    * Assign the administrative permission set using these steps: [Assign Account Access](https://docs.aws.amazon.com/singlesignon/latest/userguide/get-started-assign-account-access-admin-user.html).
-1. Install AWS CLI:
-    * [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
-1. Configure AWS CLI:
-    * Run the following command to configure access:
-    ```shell
-    aws configure sso --profile [user name]
-    ```
-   > Manage different user configurations using the profile option.
-1. Complete Authorization:
-    * Specify the session name for the token. Authorize in the browser as prompted.
-      <p>
-        <img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_6.png" alt="Image 6" width="33%" style="border-radius: 10px; box-shadow: 5px 5px 10px grey;"/>
-      </p>
-1. Refer to the following authorization process images:
-      <p>
-      <table>
-        <tr>
-          <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_1.png" alt="Image 1" style="max-width:100%;"></td>
-          <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_2.png" alt="Image 2" style="max-width:100%;"></td>
-          <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_3.png" alt="Image 3" style="max-width:100%;"></td>
-        </tr>
-        <tr>
-          <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_4.png" alt="Image 1" style="max-width:100%;"></td>
-          <td width="33%"><img src="https://github.com/pagemosaic/.github/blob/main/images/aws_sso_auth/aws_sso_auth_5.png" alt="Image 2" style="max-width:100%;"></td>
-          <td width="33%"></td>
-        </tr>
-      </table>
-      </p>
-
-#### #2 Install CDK Toolkit
+* Use the following command to install the AWS Cloud Development Kit (CDK) Toolkit globally on your system:
 ```shell
 npm install -g aws-cdk
 ```
 
-## Pre-Deployment Preparations
 * Clone repository:
 ```shell
 git clone https://github.com/pagemosaic/pagemosaic-website-starter.git
@@ -83,17 +53,18 @@ pnpm install
 pnpm bootstrap-platform
 ```
 
-## Custom domain name and SSL certificate creation
-* If you want to bind a custom domain name to your website. You have to request a new SSL certificate for this domain.
-First, you have to buy a domain name. Then go to AWS console in the browser and request new SSL certirficate how it is shown in the video below.
+## Configuring a Custom Domain Name and SSL Certificate
+* Initially, purchase a domain name from a domain registrar of your choice.
+* Once you have your domain name, navigate to the AWS Management Console in your browser.
+* Request a new SSL certificate for your domain, as demonstrated in the video tutorial linked below.
    <p>
       <a href="https://youtu.be/kiEkHLNfAGo" target="_blank">
    <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/SSL_certificate_request.png" alt="SSL certificate issuing" width="45%"/>
       </a>
    </p>
 * Configure environment:
-  * `CERTIFICATE_ARN` - ARN of the AWS certificate resource value copied as it is shown in the video
-  * `DOMAIN_NAMES` - a domain name, and subdomains divided by comma
+  * `CERTIFICATE_ARN` - This is the Amazon Resource Name (ARN) of your AWS SSL certificate. Copy the ARN value as shown in the video tutorial.
+  * `DOMAIN_NAMES` - Specify your domain name here, along with any subdomains, separated by commas.
 
 ## Deployment
 
@@ -103,6 +74,18 @@ pnpm deploy-platform
 ```
 
 * Look for `WebsiteDomainName` in the output and visit the URL.
+
+## Associating a Custom Domain Name with Your Website CDN
+After setting up your custom domain name and obtaining a validated SSL certificate (as detailed in the previous section), you can proceed to bind the custom domain to your website's Content Delivery Network (CDN). Follow these steps to complete the process:
+* Ensure you have a custom domain name and a validated SSL certificate, as shown in the previous tutorial.
+* Watch the following video tutorial to learn how to bind your custom domain to the website CDN. 
+   <p>
+      <a href="https://youtu.be/6TTTo1UME00" target="_blank">
+   <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/custom_domain_to_cdn.png" alt="Custom domain name for website CND" width="45%"/>
+      </a>
+   </p>
+* Once the binding process is complete, open a web browser and enter your domain name address to view your website.
+**Please note:** DNS records may take some time to propagate, potentially up to 24 hours, before your website becomes accessible via the new domain name.
 
 ## Add Website Files
 * Transfer all your static website files into the `/platform/web-app` directory.
