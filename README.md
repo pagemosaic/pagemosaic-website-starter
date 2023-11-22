@@ -1,6 +1,6 @@
 # Website Starter on AWS
 
-> This boilerplate is a component of the Page Mosaic Web Platform.
+> This boilerplate is a component of the [Page Mosaic Web Platform](https://github.com/pagemosaic).
 
 This starter kit offers an optimal solution for hosting static websites on Amazon Web Services (AWS). 
 To deploy your website, simply transfer your website files to the `/platform/web-app` directory. 
