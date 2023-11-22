@@ -1,6 +1,4 @@
-# Page Mosaic Web Platform | Website Starter
-
-This is the stage 1 of the development process of Page Mosaic Web Platform.
+## Website Starter on AWS
 
 Using this code you can deploy a static web page into AWS with only single command.
 
@@ -27,10 +25,12 @@ Set up a user with administrative rights and programmatic access to AWS resource
   1. Complete the Authorization Process:
      * Specify the session name for the session token.
   1. Authorize in the browser when prompted by the terminal and complete any required forms.
+     |     |     |     |
+     | --- | --- | --- |
+     | ![Image 1](IMAGE_URL_1) | ![Image 2](IMAGE_URL_2) | ![Image 3](IMAGE_URL_3) |
 
 
 ### Preparations before use:
-
 
 * Install AWS CLI using this instructions: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 * Install CDK Toolkit:
@@ -61,7 +61,7 @@ pnpm install
 
 * Configure user SSO session:
 ```shell
-aws configure sso —profile [user name]
+aws configure sso --profile [user name]
 ```
 
 * Run the CDK bootstrap:
