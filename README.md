@@ -10,7 +10,8 @@ Following this, execute the command `pnpm deploy-platform` to initiate the deplo
 Upon successful deployment of the website resources to your AWS account, you will obtain:
 * A CDN distribution for your static website, accessible through a uniquely generated AWS URL.
 * An S3 bucket, serving as the storage location for your website's files.
-* Additionally, this README includes a step-by-step video tutorial guiding you through the process of setting up a custom domain name for your website.
+
+**Additionally,** this README includes a step-by-step video tutorial guiding you through the process of setting up a custom domain name for your website.
 
 ## Set Up Your AWS Environment
 * Create an administrative user on AWS and configure AWS CLI locally:
