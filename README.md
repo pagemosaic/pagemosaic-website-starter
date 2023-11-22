@@ -10,11 +10,10 @@ Following this, execute the command `pnpm deploy-platform` to initiate the deplo
 Upon successful deployment of the website resources to your AWS account, you will obtain:
 * A CDN distribution for your static website, accessible through a uniquely generated AWS URL.
 * An S3 bucket, serving as the storage location for your website's files.
-Additionally, this README includes a step-by-step video tutorial guiding you through the process of setting up a custom domain name for your website. This includes obtaining a free SSL certificate for enhanced security and trust.
+* Additionally, this README includes a step-by-step video tutorial guiding you through the process of setting up a custom domain name for your website.
 
-## Setting Up Your AWS Environment
-* 
-* Create an Administrative User on AWS and Configure AWS CLI Locally:
+## Set Up Your AWS Environment
+* Create an administrative user on AWS and configure AWS CLI locally:
    <p>
       <a href="https://youtu.be/mXf6EvOvvKY" target="_blank">
    <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/create_admin_on_aws.png" alt="SSL certificate issuing" width="45%"/>
@@ -26,6 +25,7 @@ Additionally, this README includes a step-by-step video tutorial guiding you thr
 npm install -g aws-cdk
 ```
 
+## Set Up Project Source Code
 * Clone repository:
 ```shell
 git clone https://github.com/pagemosaic/pagemosaic-website-starter.git
@@ -48,12 +48,7 @@ pnpm install
     * `AWS_PROFILE_NAME` - your SSO user name
     * `STACK_NAME` - AWS Stack name you prefer
 
-* Run CDK Bootstrap (only once if not previously done):
-```shell
-pnpm bootstrap-platform
-```
-
-## Configuring a Custom Domain Name and SSL Certificate
+## Configure a Custom Domain Name and SSL Certificate
 * Initially, purchase a domain name from a domain registrar of your choice.
 * Once you have your domain name, navigate to the AWS Management Console in your browser.
 * Request a new SSL certificate for your domain, as demonstrated in the video tutorial linked below.
@@ -67,7 +62,10 @@ pnpm bootstrap-platform
   * `DOMAIN_NAMES` - Specify your domain name here, along with any subdomains, separated by commas.
 
 ## Deployment
-
+* Run CDK Bootstrap (only once if not previously done):
+```shell
+pnpm bootstrap-platform
+```
 * Execute CDK deployment:
 ```shell
 pnpm deploy-platform
@@ -75,7 +73,7 @@ pnpm deploy-platform
 
 * Look for `WebsiteDomainName` in the output and visit the URL.
 
-## Associating a Custom Domain Name with Your Website CDN
+## Associate a Custom Domain Name with Your Website CDN
 After setting up your custom domain name and obtaining a validated SSL certificate (as detailed in the previous section), you can proceed to bind the custom domain to your website's Content Delivery Network (CDN). Follow these steps to complete the process:
 * Ensure you have a custom domain name and a validated SSL certificate, as shown in the previous tutorial.
 * Watch the following video tutorial to learn how to bind your custom domain to the website CDN. 
@@ -85,7 +83,7 @@ After setting up your custom domain name and obtaining a validated SSL certifica
       </a>
    </p>
 * Once the binding process is complete, open a web browser and enter your domain name address to view your website.
-**Please note:** DNS records may take some time to propagate, potentially up to 24 hours, before your website becomes accessible via the new domain name.
+* **Please note:** DNS records may take some time to propagate, potentially up to 24 hours, before your website becomes accessible via the new domain name.
 
 ## Add Website Files
 * Transfer all your static website files into the `/platform/web-app` directory.
