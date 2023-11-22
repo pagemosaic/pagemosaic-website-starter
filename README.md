@@ -88,7 +88,7 @@ pnpm bootstrap-platform
 First, you have to buy a domain name. Then go to AWS console in the browser and request new SSL certirficate how it is shown in the video below.
    <p>
       <a href="https://youtu.be/kiEkHLNfAGo" target="_blank">
-   <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/SSL_certificate_request.png" alt="SSL certificate issuing" width="33%"/>
+   <img src="https://github.com/pagemosaic/.github/blob/main/images/website_starter_videos_covers/SSL_certificate_request.png" alt="SSL certificate issuing" width="45%"/>
       </a>
    </p>
 * Configure environment:
