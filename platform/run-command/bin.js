@@ -10,13 +10,6 @@ const envVarsFromFile = dotenv.config({ path: envFilePath }).parsed;
 
 // Initialize the environment object with variables from .env file
 let env = { ...envVarsFromFile };
-
-const STACK_NAME = env.STACK_NAME;
-if (!STACK_NAME) {
-    console.log('Error: Missing stack name. Set STACK_NAME in your environment.');
-    process.exit(1);
-}
-
 // Extract AWS_PROFILE_NAME from loaded environment variables
 const AWS_PROFILE_NAME = env.AWS_PROFILE_NAME;
 
@@ -97,7 +90,6 @@ function runCommand(command) {
     });
 }
 
-// Set AWS credentials and then run the command
 setAWSCredentials(() => {
     // Fetch credentials from environment variables
     const awsAccessKeyId = env.AWS_ACCESS_KEY_ID;

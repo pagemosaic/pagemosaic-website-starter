@@ -9,9 +9,10 @@
     "platform/*"
   ],
   "scripts": {
-    "bootstrap-platform": "turbo run bootstrap",
-    "deploy-platform": "turbo run deploy",
-    "destroy-platform": "turbo run destroy"
+    "build-platform": "run-command turbo run build",
+    "bootstrap-platform": "run-command turbo run bootstrap",
+    "deploy-platform": "run-command turbo run deploy",
+    "destroy-platform": "run-command turbo run destroy"
   },
   "engines": {
     "node": "18.x"
